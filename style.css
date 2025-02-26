@@ -49,25 +49,42 @@ body {
 /* Task 3.1 */
 
 .task-3-1.container {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto auto auto;
+  height: 100vh;
 }
 
 @media (min-width: 720px) {
   .task-3-1.container {
+    display: grid; 
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto auto 1fr auto;
   }
 
   .task-3-1 .header {
+    grid-column-start: 1;
+    grid-column-end: 3;
   }
 
   .task-3-1 .navigation {
+    grid-column-start: 1;
+    grid-column-end: 3;
   }
 
   .task-3-1 .main {
+    grid-column-start: 2;
+    grid-column-end: 3;
   }
 
   .task-3-1 .sidebar {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
   }
 
   .task-3-1 .ads {
+
   }
 
   .task-3-1 .footer {
@@ -75,52 +92,105 @@ body {
 }
 
 @media (min-width: 1020px) {
+  .task-3-1.container {
+    display: grid; 
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto auto 1fr auto;
+  }
   .task-3-1 .header {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    
   }
 
   .task-3-1 .navigation {
+    grid-column-start: 2;
+    grid-column-end: 3;
   }
 
   .task-3-1 .main {
+  
   }
 
   .task-3-1 .sidebar {
+    grid-row-start: 2;
+    grid-row-end: 5;
   }
 
   .task-3-1 .ads {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
   }
 
   .task-3-1 .footer {
+    grid-column-start: 1;
+    grid-column-end: 4;
   }
 }
 
 /* Task 3.2 */
 
 .task-3-2.container {
+  display: grid;
+  grid-template-areas: 
+  "header"
+  "navigation"
+  "ads"
+  "sidebar"
+  "main"
+  "footer"
+  ;
+  height: 100vh;
+  grid-template-rows: auto auto 1fr auto auto auto;
 }
 
 .task-3-2 .header {
+  grid-area: header;
 }
 
 .task-3-2 .navigation {
+  grid-area: navigation;
 }
 
 .task-3-2 .ads {
+  grid-area: ads;
 }
 
 .task-3-2 .sidebar {
+  grid-area: sidebar;
 }
 
 .task-3-2 .main {
+  grid-area: main;
 }
 
 .task-3-2 .footer {
+  grid-area: footer;
 }
 
 @media (min-width: 720px) {
+  .task-3-2.container {
+    grid-template-areas: 
+    "header header header header header"
+    "navigation navigation navigation navigation navigation"
+    "sidebar main main main main"
+    "ads footer footer footer footer"
+    ;
+  }
+  
 }
 
 @media (min-width: 1020px) {
+  .task-3-2.container {
+    grid-template-areas:
+    "header header header header header"
+    "sidebar navigation navigation navigation ads"
+    "sidebar main main main ads"
+    "footer footer footer footer footer"
+    ;
+  }
 }
 
 /* Task 4 */
